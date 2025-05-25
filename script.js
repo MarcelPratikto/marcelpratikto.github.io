@@ -1,93 +1,246 @@
-// Marcel Pratikto Resume Website - JavaScript
+// Marcel Pratikto Resume Website - JavaScript with LocalStorage (GitHub Pages Compatible)
 
-// Resume data storage
-let resumeData = {
-    profile: {
-        name: 'Marcel Pratikto',
-        title: 'Lead Software Engineer',
-        summary: 'Computer Science graduate with 4+ years of Python experience and expertise in machine learning, embedded systems, and scalable software development.',
-        imageUrl: ''
-    },
-    contact: {
-        phone: '267-356-7568',
-        email: 'marcelaapratikto@gmail.com',
-        location: 'Lexington, KY'
-    },
-    social: [
-        { platform: 'linkedin', icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/marcel-pratikto' },
-        { platform: 'github', icon: 'fab fa-github', url: 'https://github.com/MarcelPratikto' }
-    ],
-    skills: [
-        {
-            category: 'Languages',
-            icon: 'fas fa-code',
-            skills: ['Python (4 years)', 'C & C++ (3 years)', 'Java & C# (1 year)', 'JavaScript', 'HTML & CSS']
-        },
-        {
-            category: 'Development',
-            icon: 'fas fa-tools',
-            skills: ['Git & GitHub', 'Docker', 'Linux Terminal', 'Agile & Scrum', 'RESTful APIs']
-        },
-        {
-            category: 'Embedded Systems',
-            icon: 'fas fa-microchip',
-            skills: ['Raspberry Pi', 'Arduino', 'HPC Systems']
-        },
-        {
-            category: 'Languages',
-            icon: 'fas fa-globe',
-            skills: ['English (Native)', 'Indonesian (Proficient)']
+// Resume data storage - will be loaded from localStorage or fallback to default
+let resumeData = {};
+
+// ==================== DATA PERSISTENCE FUNCTIONS ====================
+
+function loadResumeData() {
+    try {
+        // Try to load from localStorage first
+        const savedData = localStorage.getItem('marcelResumeData');
+        if (savedData) {
+            resumeData = JSON.parse(savedData);
+            console.log('Resume data loaded from localStorage');
+        } else {
+            console.log('No saved data found, loading defaults');
+            loadDefaultData();
         }
-    ],
-    experience: [
-        {
+        updateAllDisplays();
+    } catch (error) {
+        console.error('Error loading resume data:', error);
+        loadDefaultData();
+        updateAllDisplays();
+    }
+}
+
+function loadDefaultData() {
+    // Default data
+    resumeData = {
+        profile: {
+            name: 'Marcel Pratikto',
             title: 'Lead Software Engineer',
-            company: 'COG',
-            dateRange: 'March 2025 – April 2025',
-            description: [
-                'Spearheaded a software product launch that achieved 80% adoption rate among initial users, delivering a solution that addressed critical workflow inefficiencies',
-                'Architected an innovative HyperCard-like system using JanusGraph and BerkleyDB, enabling intuitive management of files and graphs',
-                'Oversaw development and maintenance of RESTful APIs, ensuring scalability, security, and optimal performance with strategic emphasis on AWS cloud preparation'
-            ]
+            summary: 'Computer Science graduate with 4+ years of Python experience and expertise in machine learning, embedded systems, and scalable software development.',
+            imageUrl: ''
         },
-        {
-            title: 'Software Engineer Intern',
-            company: 'BYU Brand & Creative',
-            dateRange: 'July 2024 – October 2024',
-            description: [
-                'Built a live language translation app that improved communication efficiency by 95% for international students and received a 4.5/5 user satisfaction rating',
-                'Reduced new developer onboarding time from 1 month to 2 weeks by creating comprehensive technical documentation',
-                'Collaborated with an Agile software development team to support a high-traffic website with over 30 million annual connections'
-            ]
+        contact: {
+            phone: '267-356-7568',
+            email: 'marcelaapratikto@gmail.com',
+            location: 'Lexington, KY'
         },
-        {
-            title: 'Undergraduate Researcher Intern',
-            company: 'BYU ECEN',
-            dateRange: 'May 2023 – July 2023',
-            description: [
-                'Created a parser to merge outputs from multiple simulation tools, accelerating data analysis for UAV collision avoidance research',
-                'Boosted target tracking accuracy by 90% through innovative computer vision algorithm implementation',
-                'Transformed complex research findings into actionable insights through daily briefings, enabling timely decision-making'
-            ]
-        },
-        {
-            title: 'Computer Science Tutor',
-            company: 'BYU-I Tutoring Center',
-            dateRange: 'January 2022 – May 2023',
-            description: [
-                'Elevated student performance by 30% on average across programming courses by developing custom learning materials',
-                'Mentored 20+ students each semester, with 90% reporting significant improvement in understanding core CS principles'
-            ]
-        }
-    ],
-    education: [
-        {
-            degree: 'BS, Computer Science',
-            school: 'BYU-I | Rexburg, ID',
-            details: 'Machine Learning Emphasis, Embedded Systems Minor | GPA: 3.8 | September 2020 – July 2024'
-        }
-    ]
-};
+        social: [
+            { platform: 'linkedin', icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/marcel-pratikto' },
+            { platform: 'github', icon: 'fab fa-github', url: 'https://github.com/MarcelPratikto' }
+        ],
+        skills: [
+            {
+                category: 'Languages',
+                icon: 'fas fa-code',
+                skills: ['Python (4 years)', 'C & C++ (3 years)', 'Java & C# (1 year)', 'JavaScript', 'HTML & CSS']
+            },
+            {
+                category: 'Development',
+                icon: 'fas fa-tools',
+                skills: ['Git & GitHub', 'Docker', 'Linux Terminal', 'Agile & Scrum', 'RESTful APIs']
+            },
+            {
+                category: 'Embedded Systems',
+                icon: 'fas fa-microchip',
+                skills: ['Raspberry Pi', 'Arduino', 'HPC Systems']
+            },
+            {
+                category: 'Languages',
+                icon: 'fas fa-globe',
+                skills: ['English (Native)', 'Indonesian (Proficient)']
+            }
+        ],
+        experience: [
+            {
+                title: 'Lead Software Engineer',
+                company: 'COG',
+                dateRange: 'March 2025 – April 2025',
+                description: [
+                    'Spearheaded a software product launch that achieved 80% adoption rate among initial users, delivering a solution that addressed critical workflow inefficiencies',
+                    'Architected an innovative HyperCard-like system using JanusGraph and BerkleyDB, enabling intuitive management of files and graphs',
+                    'Oversaw development and maintenance of RESTful APIs, ensuring scalability, security, and optimal performance with strategic emphasis on AWS cloud preparation'
+                ]
+            },
+            {
+                title: 'Software Engineer Intern',
+                company: 'BYU Brand & Creative',
+                dateRange: 'July 2024 – October 2024',
+                description: [
+                    'Built a live language translation app that improved communication efficiency by 95% for international students and received a 4.5/5 user satisfaction rating',
+                    'Reduced new developer onboarding time from 1 month to 2 weeks by creating comprehensive technical documentation',
+                    'Collaborated with an Agile software development team to support a high-traffic website with over 30 million annual connections'
+                ]
+            },
+            {
+                title: 'Undergraduate Researcher Intern',
+                company: 'BYU ECEN',
+                dateRange: 'May 2023 – July 2023',
+                description: [
+                    'Created a parser to merge outputs from multiple simulation tools, accelerating data analysis for UAV collision avoidance research',
+                    'Boosted target tracking accuracy by 90% through innovative computer vision algorithm implementation',
+                    'Transformed complex research findings into actionable insights through daily briefings, enabling timely decision-making'
+                ]
+            },
+            {
+                title: 'Computer Science Tutor',
+                company: 'BYU-I Tutoring Center',
+                dateRange: 'January 2022 – May 2023',
+                description: [
+                    'Elevated student performance by 30% on average across programming courses by developing custom learning materials',
+                    'Mentored 20+ students each semester, with 90% reporting significant improvement in understanding core CS principles'
+                ]
+            }
+        ],
+        education: [
+            {
+                degree: 'BS, Computer Science',
+                school: 'BYU-I | Rexburg, ID',
+                details: 'Machine Learning Emphasis, Embedded Systems Minor | GPA: 3.8 | September 2020 – July 2024'
+            }
+        ]
+    };
+}
+
+function saveResumeData() {
+    try {
+        localStorage.setItem('marcelResumeData', JSON.stringify(resumeData, null, 2));
+        showNotification('Resume data saved successfully!', 'success');
+        console.log('Resume data saved to localStorage');
+    } catch (error) {
+        console.error('Error saving resume data:', error);
+        showNotification('Error saving resume data. Storage might be full.', 'error');
+    }
+}
+
+// Export/Import functions for backup
+function exportResumeData() {
+    const dataStr = JSON.stringify(resumeData, null, 4);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `resume-backup-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    showNotification('Resume data exported successfully!', 'success');
+}
+
+function importResumeData() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    
+    input.onchange = function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const importedData = JSON.parse(e.target.result);
+                resumeData = importedData;
+                saveResumeData();
+                updateAllDisplays();
+                showNotification('Resume data imported successfully!', 'success');
+            } catch (error) {
+                console.error('Error importing data:', error);
+                showNotification('Error importing data. Please check the file format.', 'error');
+            }
+        };
+        reader.readAsText(file);
+    };
+    
+    input.click();
+}
+
+function clearResumeData() {
+    if (confirm('Are you sure you want to reset all data to defaults? This cannot be undone.')) {
+        localStorage.removeItem('marcelResumeData');
+        loadDefaultData();
+        updateAllDisplays();
+        showNotification('Resume data reset to defaults.', 'info');
+    }
+}
+
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Style the notification
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+        max-width: 400px;
+    `;
+    
+    // Set background color based on type
+    const colors = {
+        success: '#4CAF50',
+        warning: '#ff9800',
+        error: '#f44336',
+        info: '#2196F3'
+    };
+    notification.style.backgroundColor = colors[type] || colors.info;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 5000);
+}
+
+// ==================== DISPLAY UPDATE FUNCTIONS ====================
+
+function updateAllDisplays() {
+    updateProfileDisplay();
+    updateContactDisplay();
+    updateSocialDisplay();
+    updateSkillsDisplay();
+    updateExperienceDisplay();
+    updateEducationDisplay();
+}
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -100,14 +253,58 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (isDevelopment) {
         document.body.classList.add('dev-mode');
+        
+        // Add data management buttons for dev mode
+        addDataManagementButtons();
     }
     
-    // Initialize all interactive features
+    // Load resume data and initialize features
+    loadResumeData();
     initializeAnimations();
     initializeContactInteractions();
     initializeSmoothScrolling();
     initializeSkillTags();
 });
+
+// Add data management buttons in dev mode
+function addDataManagementButtons() {
+    const managementDiv = document.createElement('div');
+    managementDiv.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+    `;
+    
+    const buttons = [
+        { text: 'Export', onclick: exportResumeData, color: '#4CAF50' },
+        { text: 'Import', onclick: importResumeData, color: '#2196F3' },
+        { text: 'Reset', onclick: clearResumeData, color: '#f44336' }
+    ];
+    
+    buttons.forEach(btn => {
+        const button = document.createElement('button');
+        button.textContent = btn.text;
+        button.onclick = btn.onclick;
+        button.style.cssText = `
+            background: ${btn.color};
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: opacity 0.3s ease;
+        `;
+        button.addEventListener('mouseenter', () => button.style.opacity = '0.8');
+        button.addEventListener('mouseleave', () => button.style.opacity = '1');
+        managementDiv.appendChild(button);
+    });
+    
+    document.body.appendChild(managementDiv);
+}
 
 // ==================== MODAL FUNCTIONS ====================
 
@@ -144,6 +341,7 @@ document.getElementById('profileForm').addEventListener('submit', function(e) {
     resumeData.profile.imageUrl = document.getElementById('profileImageUrl').value;
     
     updateProfileDisplay();
+    saveResumeData();
     closeModal('profileModal');
 });
 
@@ -176,6 +374,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     resumeData.contact.location = document.getElementById('editLocation').value;
     
     updateContactDisplay();
+    saveResumeData();
     closeModal('contactModal');
 });
 
@@ -269,6 +468,7 @@ document.getElementById('socialForm').addEventListener('submit', function(e) {
     });
     
     updateSocialDisplay();
+    saveResumeData();
     closeModal('socialModal');
 });
 
@@ -383,6 +583,7 @@ document.getElementById('skillsForm').addEventListener('submit', function(e) {
     });
     
     updateSkillsDisplay();
+    saveResumeData();
     closeModal('skillsModal');
 });
 
@@ -482,6 +683,7 @@ document.getElementById('experienceForm').addEventListener('submit', function(e)
     });
     
     updateExperienceDisplay();
+    saveResumeData();
     closeModal('experienceModal');
 });
 
@@ -579,6 +781,7 @@ document.getElementById('educationForm').addEventListener('submit', function(e) 
     });
     
     updateEducationDisplay();
+    saveResumeData();
     closeModal('educationModal');
 });
 
@@ -733,5 +936,10 @@ window.MarcelResumeUtils = {
     editSocial,
     editSkills,
     editExperience,
-    editEducation
+    editEducation,
+    loadResumeData,
+    saveResumeData,
+    exportResumeData,
+    importResumeData,
+    clearResumeData
 };

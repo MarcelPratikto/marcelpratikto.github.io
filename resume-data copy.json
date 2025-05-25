@@ -1,0 +1,114 @@
+{
+    "profile": {
+        "name": "Marcel Pratikto",
+        "title": "Lead Software Engineer",
+        "summary": "Computer Science graduate with 4+ years of Python experience and expertise in machine learning, embedded systems, and scalable software development.",
+        "imageUrl": ""
+    },
+    "contact": {
+        "phone": "267-356-7568",
+        "email": "marcelaapratikto@gmail.com",
+        "location": "Lexington, KY"
+    },
+    "social": [
+        {
+            "platform": "linkedin",
+            "icon": "fab fa-linkedin",
+            "url": "https://linkedin.com/in/marcel-pratikto"
+        },
+        {
+            "platform": "github",
+            "icon": "fab fa-github",
+            "url": "https://github.com/MarcelPratikto"
+        }
+    ],
+    "skills": [
+        {
+            "category": "Languages",
+            "icon": "fas fa-code",
+            "skills": [
+                "Python (4 years)",
+                "C & C++ (3 years)",
+                "Java & C# (1 year)",
+                "JavaScript",
+                "HTML & CSS"
+            ]
+        },
+        {
+            "category": "Development",
+            "icon": "fas fa-tools",
+            "skills": [
+                "Git & GitHub",
+                "Docker",
+                "Linux Terminal",
+                "Agile & Scrum",
+                "RESTful APIs"
+            ]
+        },
+        {
+            "category": "Embedded Systems",
+            "icon": "fas fa-microchip",
+            "skills": [
+                "Raspberry Pi",
+                "Arduino",
+                "HPC Systems"
+            ]
+        },
+        {
+            "category": "Languages",
+            "icon": "fas fa-globe",
+            "skills": [
+                "English (Native)",
+                "Indonesian (Proficient)"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "title": "Lead Software Engineer",
+            "company": "COG",
+            "dateRange": "March 2025 – April 2025",
+            "description": [
+                "Spearheaded a software product launch that achieved 80% adoption rate among initial users, delivering a solution that addressed critical workflow inefficiencies",
+                "Architected an innovative HyperCard-like system using JanusGraph and BerkleyDB, enabling intuitive management of files and graphs",
+                "Oversaw development and maintenance of RESTful APIs, ensuring scalability, security, and optimal performance with strategic emphasis on AWS cloud preparation"
+            ]
+        },
+        {
+            "title": "Software Engineer Intern",
+            "company": "BYU Brand & Creative",
+            "dateRange": "July 2024 – October 2024",
+            "description": [
+                "Built a live language translation app that improved communication efficiency by 95% for international students and received a 4.5/5 user satisfaction rating",
+                "Reduced new developer onboarding time from 1 month to 2 weeks by creating comprehensive technical documentation",
+                "Collaborated with an Agile software development team to support a high-traffic website with over 30 million annual connections"
+            ]
+        },
+        {
+            "title": "Undergraduate Researcher Intern",
+            "company": "BYU ECEN",
+            "dateRange": "May 2023 – July 2023",
+            "description": [
+                "Created a parser to merge outputs from multiple simulation tools, accelerating data analysis for UAV collision avoidance research",
+                "Boosted target tracking accuracy by 90% through innovative computer vision algorithm implementation",
+                "Transformed complex research findings into actionable insights through daily briefings, enabling timely decision-making"
+            ]
+        },
+        {
+            "title": "Computer Science Tutor",
+            "company": "BYU-I Tutoring Center",
+            "dateRange": "January 2022 – May 2023",
+            "description": [
+                "Elevated student performance by 30% on average across programming courses by developing custom learning materials",
+                "Mentored 20+ students each semester, with 90% reporting significant improvement in understanding core CS principles"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "BS, Computer Science",
+            "school": "BYU-I | Rexburg, ID",
+            "details": "Machine Learning Emphasis, Embedded Systems Minor | GPA: 3.8 | September 2020 – July 2024"
+        }
+    ]
+}
