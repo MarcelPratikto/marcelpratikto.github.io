@@ -2,6 +2,5 @@
 A website showcasing my resume: https://marcelpratikto.github.io/
 
 TODO:
-* add persistent saves
-* add ability to browse for the profile picture
-* fix the edit modals / edit windows
+* edit portfolio to show videos and pictures of previous works that I've done
+* edit about me to show videos and pictures of me
