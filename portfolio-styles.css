@@ -263,56 +263,34 @@
 }
 
 /* ====================================
-   REPORT PREVIEW STYLES
+   REPORT VIEWER STYLES
    ==================================== */
 
-.report-preview {
+.report-viewer iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+}
+
+/* Fallback styling for browsers that don't support PDF iframes */
+.report-viewer p {
     text-align: center;
-    padding: 40px 30px;
     color: #d1d9ff;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 2px dashed rgba(168, 181, 255, 0.3);
 }
 
-.report-preview-icon {
-    font-size: 4em;
+.report-viewer a {
     color: #a8b5ff;
-    margin-bottom: 20px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.report-preview h4 {
+.report-viewer a:hover {
     color: #ffffff;
-    font-size: 1.4em;
-    margin-bottom: 15px;
-}
-
-.report-details {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Report Contents List */
-.report-contents {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0;
-    text-align: left;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.report-contents li {
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9em;
-}
-
-.report-contents i {
-    color: #a8b5ff;
-    font-size: 0.8em;
-    min-width: 16px;
+    text-decoration: underline;
 }
 
 /* ====================================

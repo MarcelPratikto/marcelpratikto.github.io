@@ -56,20 +56,16 @@
                     <div class="project-report">
                         <h4>Project Report</h4>
                         <div class="report-viewer">
-                            <div class="report-placeholder">
-                                <i class="fas fa-file-pdf report-icon"></i>
-                                <p>Technical Report: ECEN 260 Video Game Project</p>
-                                <p class="report-description">Detailed documentation covering system design, implementation, testing, and code analysis.</p>
-                                <button class="view-report-btn" onclick="openReportModal()">
-                                    <i class="fas fa-eye"></i> View Report
-                                </button>
-                            </div>
+                            <iframe src="docs/ECEN_260_Final_Project_Report.pdf" 
+                                    width="100%" 
+                                    height="400" 
+                                    style="border: none; border-radius: 8px;">
+                                <p>Your browser does not support PDFs. 
+                                <a href="docs/ECEN_260_Final_Project_Report.pdf" target="_blank">Download the PDF</a>.
+                                </p>
+                            </iframe>
                         </div>
                     </div>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
-                    <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Full Report</a>
                 </div>
             </div>
 
@@ -210,44 +206,5 @@
         </div>
     </div>
 
-    <!-- Report Modal (for Video Game Project) -->
-    <div id="reportModal" class="report-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>ECEN 260 Video Game Project Report</h3>
-                <button class="close-btn" onclick="closeReportModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="pdf-fallback">
-                    <div class="report-preview">
-                        <i class="fas fa-file-pdf report-preview-icon"></i>
-                        <h4>Technical Project Report</h4>
-                        <p class="report-details">
-                            <strong>ECEN 260 - Final Project: Video Game</strong><br>
-                            A comprehensive 28-page technical report covering:
-                        </p>
-                        <ul class="report-contents">
-                            <li><i class="fas fa-check-circle"></i> System Architecture & Design</li>
-                            <li><i class="fas fa-check-circle"></i> Hardware Implementation (STM32, Nokia 5110 LCD)</li>
-                            <li><i class="fas fa-check-circle"></i> Software Development (Game Engine in C)</li>
-                            <li><i class="fas fa-check-circle"></i> Testing & Validation Results</li>
-                            <li><i class="fas fa-check-circle"></i> Complete Source Code Documentation</li>
-                        </ul>
-                        <div class="report-actions">
-                            <a href="docs/ECEN_260_Final_Project_Report.pdf" target="_blank" class="download-btn primary">
-                                <i class="fas fa-download"></i> Download Full Report
-                            </a>
-                            <a href="docs/ECEN_260_Final_Project_Report.pdf" target="_blank" class="download-btn secondary">
-                                <i class="fas fa-external-link-alt"></i> Open in New Tab
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript for modal functionality -->
-    <script src="script.js"></script>
 </body>
 </html>
