@@ -2,10 +2,36 @@
    PORTFOLIO PAGE STYLES
    ==================================== */
 
-/* Portfolio Header Styles */
+/* ====================================
+   LAYOUT STRUCTURE
+   ==================================== */
+
+/* Portfolio specific container layout - two column design */
+.container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+}
+
+/* Left column for portfolio header and skills */
+.left-column {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+/* Right column for projects */
+.right-column {
+    padding-left: 20px;
+}
+
+/* ====================================
+   PORTFOLIO HEADER
+   ==================================== */
+
 .portfolio-header {
-    text-align: center;
-    margin-bottom: 50px;
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 .page-title {
@@ -21,14 +47,58 @@
 }
 
 /* ====================================
+   SKILLS SHOWCASE SECTION
+   ==================================== */
+
+.skills-showcase {
+    margin: 0;
+}
+
+.skills-visual {
+    display: grid;
+    gap: 20px;
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.skill-bar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, #a8b5ff, #e1e7ff);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.skill-years {
+    color: #b8c5ff;
+    font-size: 0.9em;
+}
+
+/* ====================================
    PROJECT GRID LAYOUT
    ==================================== */
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: 1fr;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 0;
 }
 
 /* ====================================
@@ -69,6 +139,12 @@
     border-radius: 15px;
     font-size: 0.8em;
     border: 1px solid rgba(168, 181, 255, 0.3);
+}
+
+/* Project Description */
+.project-description {
+    color: #d1d9ff;
+    line-height: 1.6;
 }
 
 /* Project Features List */
@@ -112,9 +188,40 @@
 }
 
 /* ====================================
-   VIDEO EMBEDDING STYLES
+   PROJECT MEDIA ELEMENTS
    ==================================== */
 
+/* Project Images */
+.project-images {
+    margin: 20px 0;
+}
+
+.image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-image {
+    text-align: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(168, 181, 255, 0.3);
+}
+
+.image-caption {
+    font-size: 0.8em;
+    color: #b8c5ff;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Video Embedding */
 .project-video {
     margin: 20px 0;
     border-radius: 8px;
@@ -143,128 +250,11 @@
     font-size: 1.1em;
 }
 
-/* Report Viewer Placeholder */
+/* Report Viewer */
 .report-viewer {
     border-radius: 8px;
     overflow: hidden;
 }
-
-.report-placeholder {
-    text-align: center;
-    padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 2px dashed rgba(168, 181, 255, 0.3);
-    border-radius: 8px;
-}
-
-.report-icon {
-    font-size: 3em;
-    color: #a8b5ff;
-    margin-bottom: 15px;
-}
-
-.report-description {
-    color: #b8c5ff;
-    font-size: 0.9em;
-    margin: 10px 0 20px 0;
-}
-
-/* View Report Button */
-.view-report-btn {
-    background: rgba(168, 181, 255, 0.2);
-    color: #ffffff;
-    border: 1px solid rgba(168, 181, 255, 0.5);
-    padding: 12px 24px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.view-report-btn:hover {
-    background: rgba(168, 181, 255, 0.3);
-    transform: translateY(-2px);
-}
-
-/* ====================================
-   MODAL STYLES
-   ==================================== */
-
-.report-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    margin: 5% auto;
-    padding: 0;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-}
-
-/* Modal Header */
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.modal-header h3 {
-    color: #ffffff;
-    margin: 0;
-    font-size: 1.2em;
-}
-
-/* Close Button */
-.close-btn {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5em;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-.close-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Modal Body */
-.modal-body {
-    padding: 0;
-}
-
-.pdf-fallback {
-    padding: 0;
-}
-
-/* ====================================
-   REPORT VIEWER STYLES
-   ==================================== */
 
 .report-viewer iframe {
     border-radius: 8px;
@@ -294,140 +284,59 @@
 }
 
 /* ====================================
-   DOWNLOAD BUTTONS
-   ==================================== */
-
-.report-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.download-btn {
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 0.9em;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-/* Primary Download Button */
-.download-btn.primary {
-    background: rgba(168, 181, 255, 0.3);
-    color: #ffffff;
-    border-color: rgba(168, 181, 255, 0.5);
-}
-
-.download-btn.primary:hover {
-    background: rgba(168, 181, 255, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(168, 181, 255, 0.2);
-}
-
-/* Secondary Download Button */
-.download-btn.secondary {
-    background: rgba(255, 255, 255, 0.05);
-    color: #d1d9ff;
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.download-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-/* ====================================
-   SKILLS SHOWCASE SECTION
-   ==================================== */
-
-.skills-showcase {
-    margin-top: 60px;
-}
-
-.skills-visual {
-    display: grid;
-    gap: 20px;
-}
-
-.skill-item {
-    display: grid;
-    grid-template-columns: 150px 1fr 100px;
-    align-items: center;
-    gap: 20px;
-}
-
-.skill-name {
-    color: #ffffff;
-    font-weight: 500;
-}
-
-.skill-bar {
-    background: rgba(255, 255, 255, 0.1);
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    background: linear-gradient(90deg, #a8b5ff, #e1e7ff);
-    height: 100%;
-    border-radius: 4px;
-    transition: width 0.3s ease;
-}
-
-.skill-years {
-    color: #b8c5ff;
-    font-size: 0.9em;
-}
-
-/* ====================================
    RESPONSIVE DESIGN
    ==================================== */
 
 /* Tablet and Mobile Styles */
 @media (max-width: 768px) {
-    /* Portfolio Grid */
-    .portfolio-grid {
+    /* Switch to single column layout */
+    .container {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
     
-    /* Skills Section */
+    /* Left column adjustments */
+    .left-column {
+        position: static;
+        height: auto;
+    }
+    
+    /* Right column adjustments */
+    .right-column {
+        padding-left: 0;
+    }
+    
+    /* Portfolio header center on mobile */
+    .portfolio-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    /* Skills section mobile adjustments */
     .skill-item {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 10px;
+        margin-bottom: 20px;
     }
     
-    /* Modal Styles */
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
+    /* Project grid mobile */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
     }
     
-    .report-preview {
-        padding: 30px 20px;
-    }
-    
-    .report-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .download-btn {
-        width: 200px;
-        justify-content: center;
-    }
-    
-    /* Video Adjustments */
+    /* Video adjustments */
     .project-video iframe {
         height: 200px;
+    }
+
+    /* Image pair mobile adjustments */
+    .image-pair {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .project-image img {
+        height: 180px;
     }
 }
