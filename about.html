@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcel Pratikto - About Me</title>
+    <!-- External Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <!-- About page specific styles -->
     <link rel="stylesheet" href="about-styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Fixed Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Resume</a>
                 <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <!-- Active page indicator -->
                 <a href="about.html" class="nav-link active">About Me</a>
             </div>
         </div>
     </nav>
 
+    <!-- Main Content Container -->
     <div class="container">
-        <!-- Left Column - Let's Connect Section -->
+        <!-- Left Column - Contact/Connect Section -->
         <div class="left-column">
-            <!-- Let's Connect CTA Section -->
+            <!-- Call-to-action section for connecting -->
             <div class="connect-section">
                 <h3>Let's Connect</h3>
                 <p>I'm always interested in discussing new opportunities, sharing knowledge, or collaborating on innovative projects.</p>
+                <!-- Contact buttons -->
                 <div class="connect-buttons">
                     <a href="mailto:marcelaapratikto@gmail.com" class="connect-button">
                         <i class="fas fa-envelope"></i> Email Me
@@ -38,34 +44,81 @@
             </div>
         </div>
 
-        <!-- Right Column - About Content -->
+        <!-- Right Column - Main About Content -->
         <div class="right-column">
-            <!-- Page Header -->
+            <!-- Page Header Section -->
             <div class="about-header">
                 <h1 class="page-title">About Marcel Pratikto</h1>
                 <p class="intro-paragraph">
-                    I'm a passionate Lead Software Engineer with a deep love for solving complex problems through innovative technology solutions. With over 4 years of experience in Python development and a strong background in machine learning and embedded systems, I thrive on creating software that makes a meaningful impact.
+                    I'm a passionate Computer Scientist/Software Engineer with a deep love for solving complex problems through innovative technology solutions. With over 4 years of experience in Python development and a strong background in machine learning and embedded systems, I thrive on developing software that makes a meaningful impact.
                 </p>
             </div>
 
+            <!-- Main About Content Grid -->
             <div class="about-content">
-                <!-- My Story Section -->
+                <!-- Personal Story Section with Image Carousel -->
                 <div class="about-section">
                     <h2 class="section-title"><i class="fas fa-user"></i> My Story</h2>
                     <div class="story-content">
+                        <!-- Story text content -->
                         <p>
                             My journey into software engineering began during my Computer Science studies at BYU-Idaho, where I discovered my passion for creating solutions that bridge the gap between complex technical challenges and real-world applications. What started as curiosity about how things work has evolved into a career focused on building scalable, impactful software systems.
                         </p>
                         <p>
                             Throughout my academic and professional journey, I've had the privilege of working on diverse projects - from developing live translation apps that break down language barriers to architecting innovative data management systems that streamline workflows. Each project has taught me something new and reinforced my belief that technology should serve people, not the other way around.
                         </p>
+                        
+                        <!-- Interactive Image Carousel -->
+                        <div class="story-carousel">
+                            <!-- Carousel container for slides -->
+                            <div class="carousel-container">
+                                <!-- Slide 1: BYU-I Graduation Celebration -->
+                                <div class="carousel-slide active">
+                                    <img src="images/BYUI/graduation-1.JPG" alt="Graduation celebration at BYU-Idaho">
+                                    <p class="slide-caption">Celebrating graduation at Brigham Young University-Idaho</p>
+                                </div>
+                                <!-- Slide 2: Cap Toss Moment -->
+                                <div class="carousel-slide">
+                                    <img src="images/BYUI/graduation-2.JPG" alt="Graduation cap toss moment">
+                                    <p class="slide-caption">The moment of achievement - cap toss celebration</p>
+                                </div>
+                                <!-- Slide 3: Graduation Portrait -->
+                                <div class="carousel-slide">
+                                    <img src="images/BYUI/graduation-3.JPG" alt="Graduation portrait">
+                                    <p class="slide-caption">Ready to take on the world with my Computer Science degree</p>
+                                </div>
+                                <!-- Slide 4: Victory Pose -->
+                                <div class="carousel-slide">
+                                    <img src="images/BYUI/graduation-4.JPG" alt="Victory pose after graduation">
+                                    <p class="slide-caption">Victory pose - celebrating years of hard work and dedication</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation buttons -->
+                            <button class="carousel-btn prev-btn" onclick="changeSlide(-1)" aria-label="Previous image">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn next-btn" onclick="changeSlide(1)" aria-label="Next image">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            
+                            <!-- Slide indicators/dots -->
+                            <div class="carousel-indicators">
+                                <span class="indicator active" onclick="currentSlide(1)" aria-label="Go to slide 1"></span>
+                                <span class="indicator" onclick="currentSlide(2)" aria-label="Go to slide 2"></span>
+                                <span class="indicator" onclick="currentSlide(3)" aria-label="Go to slide 3"></span>
+                                <span class="indicator" onclick="currentSlide(4)" aria-label="Go to slide 4"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- What Drives Me Section -->
+                <!-- Motivation and Values Section -->
                 <div class="about-section">
                     <h2 class="section-title"><i class="fas fa-heart"></i> What Drives Me</h2>
+                    <!-- Grid layout for motivation cards -->
                     <div class="motivation-grid">
+                        <!-- Innovation Card -->
                         <div class="motivation-card">
                             <div class="motivation-icon">
                                 <i class="fas fa-lightbulb"></i>
@@ -73,6 +126,7 @@
                             <h3>Innovation</h3>
                             <p>I'm constantly exploring new technologies and methodologies to solve problems in creative ways. Whether it's implementing machine learning algorithms or designing intuitive user interfaces, I believe there's always a better solution waiting to be discovered.</p>
                         </div>
+                        <!-- Impact Card -->
                         <div class="motivation-card">
                             <div class="motivation-icon">
                                 <i class="fas fa-users"></i>
@@ -80,6 +134,7 @@
                             <h3>Impact</h3>
                             <p>The most rewarding aspect of my work is seeing how technology can improve people's lives. From helping international students communicate more effectively to accelerating research in UAV safety, I'm motivated by software's potential to create positive change.</p>
                         </div>
+                        <!-- Learning Card -->
                         <div class="motivation-card">
                             <div class="motivation-icon">
                                 <i class="fas fa-graduation-cap"></i>
@@ -90,13 +145,14 @@
                     </div>
                 </div>
 
-                <!-- My Approach Section -->
+                <!-- Professional Approach Section -->
                 <div class="about-section">
                     <h2 class="section-title"><i class="fas fa-code"></i> My Approach</h2>
                     <div class="approach-content">
                         <p>
                             I believe in writing clean, maintainable code that not only solves today's problems but is flexible enough to adapt to tomorrow's challenges. My experience as a tutor taught me the importance of clear communication and knowledge sharing - skills that prove invaluable when collaborating with teams and stakeholders.
                         </p>
+                        <!-- Core principles list -->
                         <div class="principles-list">
                             <div class="principle-item">
                                 <i class="fas fa-check-circle"></i>
@@ -118,20 +174,27 @@
                     </div>
                 </div>
 
-                <!-- Beyond Code Section -->
+                <!-- Personal Interests Section -->
                 <div class="about-section">
                     <h2 class="section-title"><i class="fas fa-globe"></i> Beyond Code</h2>
                     <div class="personal-content">
+                        <div class="personal-image">
+                            <img src="images/Beyond Code/hiking.jpg" alt="Marcel hiking in nature">
+                            <p class="image-caption">Enjoying the great outdoors - hiking and exploring nature</p>
+                        </div>
                         <p>
-                            When I'm not coding, you'll find me exploring the intersection of technology and other fields. My bilingual background (English and Indonesian) has given me a unique perspective on how technology can bridge cultural and communication gaps. I'm also passionate about embedded systems and enjoy working on hardware projects that bring software into the physical world.
+                            When I'm not coding, you'll find me staying active and exploring the world around me. I'm passionate about working out and maintaining a healthy lifestyle, which helps keep my mind sharp for tackling complex technical challenges. Hiking is one of my favorite ways to disconnect from screens and reconnect with nature - there's something about being on a trail that sparks creativity and provides fresh perspectives on problems I'm solving.
                         </p>
                         <p>
-                            I believe that the best software engineers are well-rounded individuals who draw inspiration from diverse sources. Whether it's learning about new cultures, exploring different problem-solving approaches, or simply taking time to reflect on how technology impacts society, I strive to bring a holistic perspective to my work.
+                            I believe that the best software engineers are well-rounded individuals who draw inspiration from diverse sources. Whether it's hanging out with friends, discovering new music, or simply taking time to explore different environments, I strive to bring a holistic perspective to my work. My bilingual background (English and Indonesian) has also given me a unique perspective on how technology can bridge cultural and communication gaps.
+                        </p>
+                        <p>
+                            Music plays a big role in my life - it's my go-to companion during coding sessions and helps me maintain focus during long development cycles. I'm also passionate about embedded systems and enjoy working on hardware projects that bring software into the physical world, bridging the gap between digital solutions and tangible experiences.
                         </p>
                     </div>
                 </div>
 
-                <!-- Looking Forward Section -->
+                <!-- Future Goals Section -->
                 <div class="about-section">
                     <h2 class="section-title"><i class="fas fa-rocket"></i> Looking Forward</h2>
                     <div class="future-content">
@@ -147,6 +210,7 @@
         </div>
     </div>
 
+    <!-- JavaScript file for interactive functionality -->
     <script src="script.js"></script>
 </body>
 </html>
