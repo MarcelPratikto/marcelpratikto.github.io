@@ -3,6 +3,14 @@ To untrack a directory:
 ```python
 git rm -r --cached src-tauri/target
 ```
+To create a new branch from main
+```python
+# make sure you're in main, and main is updated
+git checkout main
+git pull origin main
+# creates a new branch and switch to it
+git checkout -b <new-branch-name>
+```
 
 To merge
 ```python
@@ -26,16 +34,12 @@ To change the local and remote master repo
 # Pre-req:
 # Make sure your current directory is the one for the app
 # For me, that is C:/COG_DEV/COG_app
-
 # 1. Ensure you're on the branch you want to become the new master.
 git checkout your_branch_name
-
 # 2. Delete the local master branch (if it exists). Be very careful with this!
 git branch -D master
-
 # 3. Rename your current branch to master.
 git branch -m master
-
 # 4. Force push the new master to the remote repository. This will overwrite the remote master.
 git push -f origin master
 ```
@@ -44,13 +48,10 @@ Check branches
 ```python
 # check local branches
 git branch
-
 # check remote branches
 git branch -r
-
 # check local and remote branches
 git branch -a
-
 #ensure local repository has latest info from remote
 git fetch
 git fetch --all
@@ -61,7 +62,6 @@ Delete branches
 # remote_name: usually origin
 # branch_name: name of branch you want to delete
 git push <remote_name> --delete <branch_name>
-
 # for local -d or -D both works, but -D is more serious
 git branch -d <branch_name>
 ```
