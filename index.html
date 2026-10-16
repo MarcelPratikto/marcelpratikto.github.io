@@ -3,331 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcel Pratikto</title>
+    <title>Marcel Pratikto - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume-styles.css">
+    <link rel="stylesheet" href="portfolio-styles.css">
 </head>
 <body>
+    <!-- Fixed Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-links">
-                <a href="index.html" class="nav-link active">Resume</a>
-                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="index.html" class="nav-link active">Portfolio</a>
+                <a href="resume.html" class="nav-link">Resume</a>
                 <a href="about.html" class="nav-link">About Me</a>
             </div>
         </div>
     </nav>
+
     <div class="container">
-        <!-- Left Column -->
         <div class="left-column">
-            <div class="profile-image">
-                <img src="images/profile-photo.png" alt="Marcel Pratikto Profile Picture">
+            <!-- Portfolio Header -->
+            <div class="portfolio-header">
+                <h1 class="page-title">My Portfolio</h1>
+                <p class="page-subtitle">A showcase of my projects and technical achievements</p>
             </div>
-            
-            <h1 class="name">Marcel Pratikto</h1>
-            <!-- <h2 class="title">Access Control Technician</h2> -->
-            
-            <p class="summary">
-                Highly enthusiastic Test Engineer and Computer Scientist 
-                with a Bachelor of Science in Computer Science 
-                and a minor in Machine Learning and Embedded Systems Engineering. 
-                Proven ability to architect innovative software, IT, networking, 
-                and engineering solutions across diverse industries, 
-                from access control to global electronics manufacturing.
-            </p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>267-356-7568</span>
+
+            <!-- Skills Showcase Section -->
+            <div class="skills-showcase">
+                <h2 class="section-title">Technical Skills Showcase</h2>
+                <div class="skills-visual">
+                    <div class="skill-item">
+                        <div class="skill-name">Python</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                        <div class="skill-years">4+ years</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">C/C++</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                        <div class="skill-years">3+ years</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Embedded Systems</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                        <div class="skill-years">Bachelor's Degree Minor: 3 years</div>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>marcelaapratikto@gmail.com</span>
-                </div>
-                <!-- <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Lexington, KY</span>
-                </div> -->
-            </div>
-            
-            <div class="social-links">
-                <a href="https://linkedin.com/in/marcel-pratikto" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/MarcelPratikto" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
             </div>
         </div>
         
-        <!-- Right Column -->
         <div class="right-column">
-            <!-- Core Skills Section -->
-            <div class="section">
-                <h3 class="section-title">Core Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-code"></i> Programming</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C</span>
-                            <span class="skill-tag">C++</span>
+            <!-- Projects Grid -->
+            <div class="portfolio-grid">
+                <!-- Handheld Video Game Console Project -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Handheld Video Game Console</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Embedded Systems</span>
+                            <span class="tech-tag">STM32</span>
+                            <span class="tech-tag">Microcontroller</span>
+                            <span class="tech-tag">C</span>
                         </div>
                     </div>
-
-                    <div class="skill-category">
-                        <h4><i class="fas fa-tools"></i> Engineering & Manufacturing</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Test Engineering</span>
-                            <span class="skill-tag">Electronics Manufacturing</span>
-                            <span class="skill-tag">Test Scripts</span>
-                            <span class="skill-tag">Robotics</span>
-                            <span class="skill-tag">Failure, Root Cause Analysis</span>
-                            <span class="skill-tag">Embedded Systems Engineering</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4><i class="fas fa-tools"></i> Software Tools & Systems</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Git & GitHub</span>
-                            <span class="skill-tag">Agile/Scrum</span>
-                            <span class="skill-tag">Operating System Fundamentals</span>
-                            <span class="skill-tag">APIs</span>
-                            <span class="skill-tag">Docker</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4><i class="fas fa-code"></i> IT & Hardware</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Security Systems: Cameras, Access Control</span>
-                            <span class="skill-tag">Relay Logic & PLCs</span>
-                            <span class="skill-tag">Networking</span>
-                            <span class="skill-tag">Network Cabling</span>
-                            <span class="skill-tag">Computer Assembly</span>
-                            <span class="skill-tag">Terminals: Linux, MacOS, Windows</span>
-                        </div>
-                    </div>
-                    
-                    <!-- <div class="skill-category">
-                        <h4><i class="fas fa-microchip"></i> Embedded Systems</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Raspberry Pi</span>
-                            <span class="skill-tag">Arduino</span>
-                            <span class="skill-tag">STM32</span>
-                        </div>
-                    </div> -->
-                    
-                    <div class="skill-category">
-                        <h4><i class="fas fa-globe"></i> Languages</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">English</span>
-                            <span class="skill-tag">Indonesian</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Experience Section -->
-            <div class="section">
-                <h3 class="section-title">Experience</h3>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Test Engineer</div>
-                            <div class="company">Foxconn</div>
-                            <div class="location">Houston, TX</div>
-                        </div>
-                        <div class="date-range">February 2026 – PRESENT</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>
-                                Executed firmware deployment, pathloss calibration, and root cause analysis on Main Logic Boards (MLB) to ensure peak product performance and reliability
-                            </li>
-                            <li>
-                                Performed hardware-software diagnostics to ensure signal integrity and component functionality within high-density circuitry
-                            </li>
-                            <li>
-                                Integrated test scripts, robotic systems, and electronic fixtures to streamline mass production testing, validating 12,000+ units per line on a daily basis
-                            </li>
-                            <li>
-                                Collaborated with other engineering teams to implement design-level fixes for complex anomalies under tight production quotas
-                            </li>
-                            <li>
-                                Trained technicians on testing protocols, ensuring 100% compliance within a highly confidential environment
-                            </li>
-                            <li>
-                                Deployed and optimized high-volume testing lines by managing hardware resources and data collection, maintaining consistent performance metrics for Tier-1 Global Consumer Electronics
-                            </li>
+                    <div class="project-description">
+                        <p>Video Game Console made using microcontroller, programmed in C. Features custom game engine with pixel-based rendering, collision detection, and real-time user input handling through SPI communication and interrupts.</p>
+                        <ul class="project-features">
+                            <li>Custom game engine with pixel-based texture rendering</li>
+                            <li>Nokia 5110 LCD display integration via SPI</li>
+                            <li>4x4 matrix keypad with interrupt-driven input</li>
+                            <li>Real-time collision detection and physics</li>
                         </ul>
+                        <!-- Embedded Video -->
+                        <div class="project-video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/7ErvWzjYcJ8" title="STM32 Video Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <!-- Project Report Section -->
+                        <div class="project-report">
+                            <h4>Project Report</h4>
+                            <div class="report-viewer">
+                                <iframe src="docs/ECEN_260_Final_Project_Report.pdf" 
+                                        width="100%" 
+                                        height="400" 
+                                        style="border: none; border-radius: 8px;">
+                                    <p>Your browser does not support PDFs. 
+                                    <a href="docs/ECEN_260_Final_Project_Report.pdf" target="_blank">Download the PDF</a>.
+                                    </p>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/MarcelPratikto/ECEN-260-Microprocessor-Based-Sys-Design" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Access Control Technician</div>
-                            <div class="company">Schiller</div>
-                            <div class="location">Lexington, KY</div>
+                <!-- Snake Bot Project -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Snake Bot</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Robotics</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Servo Motors</span>
+                            <span class="tech-tag">Mechanical Design</span>
                         </div>
-                        <div class="date-range">August 2025 – January 2026</div>
                     </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>
-                            Provided comprehensive technical support for access control, IP/analog video, and security systems, ensuring seamless integration and optimal performance 
-                            </li>
-                            <li>
-                            Utilized expertise in IT and network cabling to install, terminate, and troubleshoot networked systems 
-                            </li>
-                            <li>
-                            Interpreted technical blueprints and applied programming knowledge to guide system installations and configure access control hardware
-                            </li>
+                    <div class="project-description">
+                        <p>Designed and built a biomimetic snake robot capable of serpentine locomotion. Features articulated segments with servo motor control, enabling realistic snake-like movement patterns and navigation through various terrains.</p>
+                        <ul class="project-features">
+                            <li>Multi-segment articulated body with 8+ servo motors</li>
+                            <li>Serpentine locomotion algorithm for realistic movement</li>
+                            <li>Arduino-based control system with sensor integration</li>
+                            <li>3D printed modular segments for flexibility and durability</li>
+                            <li>Wireless control capability for remote operation</li>
                         </ul>
+                        <!-- Project Images -->
+                        <div class="project-images">
+                            <div class="image-pair">
+                                <div class="project-image">
+                                    <img src="images/snake-bot-assembled.jpg" alt="Assembled Snake Bot showing full articulated body">
+                                    <p class="image-caption">Fully assembled snake bot</p>
+                                </div>
+                                <div class="project-image">
+                                    <img src="images/snake-bot-team.jpg" alt="Snake Bot team">
+                                    <p class="image-caption">Snake Bot team</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Embedded Video -->
+                        <div class="project-video">
+                            <iframe width="100%" height="250" src="https://www.youtube.com/embed/xlI_FSMeOk0" title="Snake Bot Movement Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://photos.google.com/share/AF1QipOwXebuwLk9wMYPdm-SbgyDIPlTLuI3NMZklQjGr35oATP4DRJ68thlJEqRdnsylw?key=dVRKRndHeDhpOXUtbFI0SHo0Y2doRzVVTlFWQXRR" target="_blank" class="project-link"><i class="fas fa-images"></i> View Photos</a>
                     </div>
                 </div>
 
-                <!-- <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Lead Software Engineer</div>
-                            <div class="company">COG</div>
-                            <div class="location">Lexington, KY</div>
+                <!-- AI-Gamer Project -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">AI-Gamer</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Multi-Output Regression</span>
                         </div>
-                        <div class="date-range">March 2025 – April 2025</div>
                     </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>
-                            Spearheaded a software product launch that addressed critical workflow inefficiencies                             </li>
-                            </li>
-                            <li>
-                            Architected an innovative HyperCard-like system, enabling intuitive management of files and graphs alongside existing embedded systems used to control the company's copper refining processes
-                            </li>
-                            <li>
-                            Oversaw the development and maintenance of scalable and secure RESTful APIs, with a strategic emphasis on preparing the API infrastructure for seamless transition to cloud environments like AWS 
-                            </li>
+                    <div class="project-description">
+                        <p>Developed an AI system that learns to play Rocket League by training a machine learning model on player gameplay data. Uses computer vision to detect the ball and virtual gamepad controls to play autonomously.</p>
+                        <ul class="project-features">
+                            <li>Multi-output regression model with 9 gamepad control outputs</li>
+                            <li>Real-time ball detection using OpenCV and webcam input</li>
+                            <li>Virtual gamepad integration for autonomous gameplay</li>
+                            <li>Custom dataset creation from player behavior patterns</li>
                         </ul>
-                    </div>
-                </div> -->
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Software Engineer Intern</div>
-                            <div class="company">BYU Brand & Creative</div>
-                            <div class="location">Provo, UT</div>
+                        <!-- Project Images -->
+                        <div class="project-images">
+                            <div class="image-pair">
+                                <div class="project-image">
+                                    <img src="images/ai-gamer-setup.jpg" alt="AI-Gamer Setup with Webcam and Rocket League">
+                                    <p class="image-caption">Physical setup with webcam positioned to capture gameplay</p>
+                                </div>
+                                <div class="project-image">
+                                    <img src="images/ai-gamer-vision.png" alt="AI Vision - Ball Detection in Rocket League">
+                                    <p class="image-caption">AI's computer vision detecting the ball in real-time</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="date-range">July 2024 – October 2024</div>
+                        <!-- Project Report Section -->
+                        <div class="project-report">
+                            <h4>Project Report</h4>
+                            <div class="report-viewer">
+                                <iframe src="docs/AI_Gamer_Project_Report.pdf" 
+                                        width="100%" 
+                                        height="400" 
+                                        style="border: none; border-radius: 8px;">
+                                    <p>Your browser does not support PDFs. 
+                                    <a href="docs/AI_Gamer_Project_Report.pdf" target="_blank">Download the PDF</a>.
+                                    </p>
+                                </iframe>
+                            </div>
+                        </div>
                     </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>
-                            Built a live language translation app that improved communication efficiency for international students 
-                            </li>
-                            <li>
-                            Reduced new developer onboarding time from 1 month to 2 weeks by creating comprehensive technical documentation for the translation app 
-                            </li>
-                            <li>
-                            Collaborated with an Agile software development team to support and enhance a high-traffic website, contributing to the site's stability and performance for over 30 million annual connections 
-                            </li>
-                        </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/MarcelPratikto/AI-Gamer" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Undergraduate Researcher Intern</div>
-                            <div class="company">BYU ECEN</div>
-                            <div class="location">Provo, UT</div>
-                        </div>
-                        <div class="date-range">May 2023 – July 2023</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>
-                            Boosted device target tracking accuracy by 90% through innovative Computer Vision algorithm implementation, outperforming existing software solutions 
-                            </li>
-                            <li>
-                            Created a parser to merge outputs from multiple simulation tools, accelerating data analysis for Unmanned Aerial Vehicle (UAV) collision avoidance research 
-                            </li>
-                            <li>
-                            Transformed complex research findings into actionable insights through daily briefings, enabling timely decision-making that kept the project on schedule 
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Computer Science Tutor</div>
-                            <div class="company">BYU-I Tutoring Center</div>
-                            <div class="location">Rexburg, ID</div>
-                        </div>
-                        <div class="date-range">January 2022 – May 2023</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Elevated student performance by 30% on average across programming courses by developing custom learning materials</li>
-                            <li>Mentored 20+ students each semester, with 90% reporting significant improvement in understanding core CS principles</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-             <!-- Volunteer Experience Section -->
-            <div class="section">
-                <h3 class="section-title">Volunteer Experience</h3>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Student Computer Scientist & IT</div>
-                            <div class="company">BYU-I High Performance Computing Society</div>
-                            <div class="location">Rexburg, ID</div>
-                        </div>
-                        <div class="date-range">January 2024 – July 2024</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Assembled a supercomputer and configured a Linux-based HPC system for advanced computing research</li>
-                            <li>Implemented parallelization methods to optimize computational performance across nodes</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Education Section -->
-            <div class="section">
-                <h3 class="section-title">Education</h3>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">BS, Computer Science</div>
-                            <div class="company">BYU-I</div>
-                            <div class="location">Rexburg, ID</div>
-                        </div>
-                        <div class="date-range">September 2020 – July 2024</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Machine Learning Emphasis</li>
-                            <li>Embedded Systems Minor</li>
-                            <li>GPA: 3.84</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
