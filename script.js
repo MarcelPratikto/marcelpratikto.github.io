@@ -1,7 +1,15 @@
-// Function to toggle PDF report previews
-function toggleReport(reportId) {
+// Function to dynamically load and toggle PDF report previews safely on mobile & desktop
+function loadAndToggleReport(reportId, pdfUrl) {
     var reportElement = document.getElementById(reportId);
-    if (reportElement) {
+    var iframeElement = document.getElementById('iframe-' + reportId);
+
+    if (reportElement && iframeElement) {
+        // Load the PDF source only when the user clicks the preview button
+        if (!iframeElement.src || iframeElement.src === window.location.href || iframeElement.src === window.location.origin + "/") {
+            iframeElement.src = pdfUrl;
+        }
+
+        // Toggle open/closed state
         if (reportElement.classList.contains('active')) {
             reportElement.classList.remove('active');
         } else {
@@ -62,16 +70,24 @@ function resetAutoSlide() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Automatically open PDF reports only on desktop screens (> 768px) to protect mobile viewports
+    // Automatically open PDF reports and load their sources only on desktop screens (> 768px)
     if (window.innerWidth > 768) {
         const consoleReport = document.getElementById('console-report');
+        const consoleIframe = document.getElementById('iframe-console-report');
+        if (consoleReport && consoleIframe) {
+            consoleIframe.src = 'docs/ECEN_260_Final_Project_Report.pdf';
+            consoleReport.classList.add('active');
+        }
+
         const aiReport = document.getElementById('ai-gamer-report');
-        
-        if (consoleReport) consoleReport.classList.add('active');
-        if (aiReport) aiReport.classList.add('active');
+        const aiIframe = document.getElementById('iframe-ai-gamer-report');
+        if (aiReport && aiIframe) {
+            aiIframe.src = 'docs/AI_Gamer_Project_Report.pdf';
+            aiReport.classList.add('active');
+        }
     }
 
-    // 2. Initialize carousel if present
+    // Initialize carousel if present
     if (slides.length > 0) {
         showSlide(0);
         const carousel = document.querySelector('.story-carousel');
