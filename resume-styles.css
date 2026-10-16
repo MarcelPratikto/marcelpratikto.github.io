@@ -370,6 +370,15 @@ body {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Give the header a little clear margin under the navbar */
+    .page-header-spacing {
+        text-align: center;
+        /* Add top padding to body on mobile so fixed navbar doesn't cover content */
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 480px) {

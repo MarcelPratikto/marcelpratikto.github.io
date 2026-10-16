@@ -334,7 +334,8 @@
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+        padding-top: 20px;
     }
     
     .left-column {
@@ -346,8 +347,12 @@
         padding-left: 0;
     }
     
-    .portfolio-header {
+    /* Give the header a little clear margin under the navbar */
+    .page-header-spacing {
         text-align: center;
+        /* Add top padding to body on mobile so fixed navbar doesn't cover content */
+        padding-top: 10px;
+        margin-top: 10px;
         margin-bottom: 30px;
     }
     
