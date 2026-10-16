@@ -233,7 +233,7 @@
 }
 
 /* ====================================
-   PROJECT REPORT SECTION
+   PROJECT REPORT & TOGGLE STYLES
    ==================================== */
 
 .project-report {
@@ -246,8 +246,52 @@
 
 .project-report h4 {
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 1.1em;
+}
+
+.project-report p {
+    color: #d1d9ff;
+    font-size: 0.95em;
+    margin-bottom: 12px;
+}
+
+.report-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.toggle-report-btn {
+    background: rgba(168, 181, 255, 0.2);
+    color: #e1e7ff;
+    border: 1px solid rgba(168, 181, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-report-btn:hover {
+    background: rgba(168, 181, 255, 0.35);
+    color: #ffffff;
+}
+
+/* Hidden by default to prevent mobile loading crashes */
+.report-viewer-container {
+    display: none;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.report-viewer-container.active {
+    display: block;
 }
 
 /* Report Viewer */
@@ -287,32 +331,26 @@
    RESPONSIVE DESIGN
    ==================================== */
 
-/* Tablet and Mobile Styles */
 @media (max-width: 768px) {
-    /* Switch to single column layout */
     .container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    /* Left column adjustments */
     .left-column {
         position: static;
         height: auto;
     }
     
-    /* Right column adjustments */
     .right-column {
         padding-left: 0;
     }
     
-    /* Portfolio header center on mobile */
     .portfolio-header {
         text-align: center;
         margin-bottom: 30px;
     }
     
-    /* Skills section mobile adjustments */
     .skill-item {
         grid-template-columns: 1fr;
         text-align: center;
@@ -320,17 +358,14 @@
         margin-bottom: 20px;
     }
     
-    /* Project grid mobile */
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
     
-    /* Video adjustments */
     .project-video iframe {
         height: 200px;
     }
 
-    /* Image pair mobile adjustments */
     .image-pair {
         grid-template-columns: 1fr;
         gap: 15px;

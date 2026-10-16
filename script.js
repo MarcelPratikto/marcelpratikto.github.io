@@ -1,3 +1,15 @@
+// Function to toggle PDF report previews
+function toggleReport(reportId) {
+    var reportElement = document.getElementById(reportId);
+    if (reportElement) {
+        if (reportElement.classList.contains('active')) {
+            reportElement.classList.remove('active');
+        } else {
+            reportElement.classList.add('active');
+        }
+    }
+}
+
 // Carousel functionality
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.carousel-slide');
@@ -6,40 +18,32 @@ let slideInterval;
 
 // Function to show a specific slide
 function showSlide(index) {
-    // Hide all slides
     slides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
     
-    // Show current slide
     if (slides[index]) {
         slides[index].classList.add('active');
         indicators[index].classList.add('active');
     }
 }
 
-// Function to change slide (next/previous)
 function changeSlide(direction) {
     currentSlideIndex += direction;
-    
-    // Loop around if at beginning or end
     if (currentSlideIndex >= slides.length) {
         currentSlideIndex = 0;
     } else if (currentSlideIndex < 0) {
         currentSlideIndex = slides.length - 1;
     }
-    
     showSlide(currentSlideIndex);
     resetAutoSlide();
 }
 
-// Function to go to specific slide
 function currentSlide(index) {
     currentSlideIndex = index - 1;
     showSlide(currentSlideIndex);
     resetAutoSlide();
 }
 
-// Auto-slide functionality
 function nextSlide() {
     currentSlideIndex++;
     if (currentSlideIndex >= slides.length) {
@@ -48,24 +52,28 @@ function nextSlide() {
     showSlide(currentSlideIndex);
 }
 
-// Start auto-slide
 function startAutoSlide() {
-    slideInterval = setInterval(nextSlide, 10000); // 10 seconds
+    slideInterval = setInterval(nextSlide, 10000);
 }
 
-// Reset auto-slide (restart timer)
 function resetAutoSlide() {
     clearInterval(slideInterval);
-    // startAutoSlide();
 }
 
-// Initialize carousel when page loads
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // 1. Automatically open PDF reports only on desktop screens (> 768px) to protect mobile viewports
+    if (window.innerWidth > 768) {
+        const consoleReport = document.getElementById('console-report');
+        const aiReport = document.getElementById('ai-gamer-report');
+        
+        if (consoleReport) consoleReport.classList.add('active');
+        if (aiReport) aiReport.classList.add('active');
+    }
+
+    // 2. Initialize carousel if present
     if (slides.length > 0) {
         showSlide(0);
-        // startAutoSlide();
-        
-        // Pause auto-slide when hovering over carousel
         const carousel = document.querySelector('.story-carousel');
         if (carousel) {
             carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
